@@ -33,8 +33,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/toDoAppV3
-    username: toDoAppV3
-    password:
+    username: postgres
+    password: Viettien1602
     hikari:
       poolName: Hikari
       auto-commit: false
