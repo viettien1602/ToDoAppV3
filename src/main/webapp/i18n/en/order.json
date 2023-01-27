@@ -1,0 +1,30 @@
+{
+  "toDoAppV3App": {
+    "order": {
+      "home": {
+        "title": "Orders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Order",
+        "createOrEditLabel": "Create or edit a Order",
+        "notFound": "No Orders found"
+      },
+      "created": "A new Order is created with identifier {{ param }}",
+      "updated": "A Order is updated with identifier {{ param }}",
+      "deleted": "A Order is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order {{ id }}?"
+      },
+      "detail": {
+        "title": "Order"
+      },
+      "id": "ID",
+      "dateTime": "Date Time",
+      "totalPrice": "Total Price",
+      "deliveryAddress": "Delivery Address",
+      "note": "Note",
+      "status": "Status",
+      "orderDetails": "Order Details",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "toDoAppV3App": {
+    "OrderDetailStatus": {
+      "null": "",
+      "DONE": "DONE",
+      "PENDING_REFUND": "PENDING_REFUND",
+      "REFUNDED": "REFUNDED"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+
+enum OrderDetailStatus {
+	DONE
+    PENDING_REFUND
+    REFUNDED
+}
+
+entity Category {
+	categoryName String required
+}
+
+entity Product {
+	productName String required
+    img String
+    price Double
+    quantity Integer
+    importDate LocalDate
+    status Boolean
+}
+
+entity Order {
+	dateTime Instant
+    totalPrice Double
+    deliveryAddress String
+    note String
+    status Boolean
+}
+
+entity OrderDetails {
+	quantity Integer
+    price Double
+    status OrderDetailStatus
+}
+
+/**
+ * One to many relationship.
+ */
+relationship OneToMany {
+	Category to Product{category(categoryName)}
+}
+
+relationship OneToMany {
+	Product to OrderDetails{product}
+}
+
+relationship OneToMany {
+	Order to OrderDetails{order}
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+	Order{user} to User
+}
+
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceImpl

@@ -1,0 +1,49 @@
+{
+  "name": "Order",
+  "fields": [
+    {
+      "fieldName": "dateTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "deliveryAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orderDetails",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "orderDetails"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "user"
+    }
+  ],
+  "entityTableName": "jhi_order",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20230125154024"
+}

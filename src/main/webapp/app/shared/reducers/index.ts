@@ -11,6 +11,14 @@ import activate, { ActivateState } from 'app/modules/account/activate/activate.r
 import password, { PasswordState } from 'app/modules/account/password/password.reducer';
 import settings, { SettingsState } from 'app/modules/account/settings/settings.reducer';
 import passwordReset, { PasswordResetState } from 'app/modules/account/password-reset/password-reset.reducer';
+// prettier-ignore
+import category from 'app/entities/category/category.reducer';
+// prettier-ignore
+import product from 'app/entities/product/product.reducer';
+// prettier-ignore
+import order from 'app/entities/order/order.reducer';
+// prettier-ignore
+import orderDetails from 'app/entities/order-details/order-details.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer = {
@@ -24,6 +32,10 @@ const rootReducer = {
   passwordReset,
   password,
   settings,
+  category,
+  product,
+  order,
+  orderDetails,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 };
