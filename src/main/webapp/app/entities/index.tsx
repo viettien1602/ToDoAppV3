@@ -8,6 +8,7 @@ import Category from './category';
 import Product from './product';
 import Order from './order';
 import OrderDetails from './order-details';
+import Report from './report';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
@@ -18,6 +19,7 @@ const Routes = ({ match }) => (
       <ErrorBoundaryRoute path={`${match.url}product`} component={Product} />
       <ErrorBoundaryRoute path={`${match.url}order`} component={Order} />
       <ErrorBoundaryRoute path={`${match.url}order-details`} component={OrderDetails} />
+      <ErrorBoundaryRoute path={`${match.url}report`} component={Report} />
       {/* jhipster-needle-add-route-path - JHipster will add routes here */}
     </Switch>
   </div>

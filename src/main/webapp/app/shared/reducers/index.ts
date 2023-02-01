@@ -19,6 +19,8 @@ import product from 'app/entities/product/product.reducer';
 import order from 'app/entities/order/order.reducer';
 // prettier-ignore
 import orderDetails from 'app/entities/order-details/order-details.reducer';
+// prettier-ignore
+import report from 'app/entities/report/report.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer = {
@@ -36,6 +38,7 @@ const rootReducer = {
   product,
   order,
   orderDetails,
+  report,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 };

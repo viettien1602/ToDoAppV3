@@ -1,0 +1,10 @@
+entity Report {
+    reportTime Instant
+    totalTurnover Double
+    status Boolean
+}
+
+paginate * with pagination
+dto * with mapstruct
+service all with serviceImpl
+

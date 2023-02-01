@@ -1,0 +1,28 @@
+{
+  "name": "Report",
+  "fields": [
+    {
+      "fieldName": "reportTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "totalTurnover",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "report",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20230201084821"
+}

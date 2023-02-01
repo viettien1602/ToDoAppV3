@@ -43,7 +43,7 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en"],
-    "entities": ["Category", "Product", "Order", "OrderDetails"],
-    "lastLiquibaseTimestamp": 1674661225000
+    "entities": ["Category", "Product", "Order", "OrderDetails", "Report"],
+    "lastLiquibaseTimestamp": 1675241301000
   }
 }
