@@ -180,4 +180,10 @@ public class CategoryResource {
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
             .build();
     }
+
+    @GetMapping("/hello-message")
+    public ResponseEntity<String> getHelloMessage() {
+        log.debug("REST request to send hello message back");
+        return ResponseEntity.ok("Hello world");
+    }
 }
