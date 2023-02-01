@@ -88,6 +88,11 @@ public class TokenProvider {
         return new UsernamePasswordAuthenticationToken(principal, token, authorities);
     }
 
+    //Get name of authentication from jwt
+    public String getAuthenticationName(String token) {
+        return jwtParser.parseClaimsJws(token).getBody().getSubject();
+    }
+
     public boolean validateToken(String authToken) {
         try {
             jwtParser.parseClaimsJws(authToken);

@@ -1,6 +1,7 @@
 package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.repository.OrderDetailsRepository;
+import com.mycompany.myapp.security.AuthoritiesConstants;
 import com.mycompany.myapp.service.OrderDetailsService;
 import com.mycompany.myapp.service.dto.OrderDetailsDTO;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
@@ -17,6 +18,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
@@ -54,6 +56,7 @@ public class OrderDetailsResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/order-details")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<OrderDetailsDTO> createOrderDetails(@RequestBody OrderDetailsDTO orderDetailsDTO) throws URISyntaxException {
         log.debug("REST request to save OrderDetails : {}", orderDetailsDTO);
         if (orderDetailsDTO.getId() != null) {
@@ -77,6 +80,7 @@ public class OrderDetailsResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/order-details/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<OrderDetailsDTO> updateOrderDetails(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody OrderDetailsDTO orderDetailsDTO
@@ -112,6 +116,7 @@ public class OrderDetailsResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PatchMapping(value = "/order-details/{id}", consumes = "application/merge-patch+json")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<OrderDetailsDTO> partialUpdateOrderDetails(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody OrderDetailsDTO orderDetailsDTO
@@ -143,6 +148,7 @@ public class OrderDetailsResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of orderDetails in body.
      */
     @GetMapping("/order-details")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<List<OrderDetailsDTO>> getAllOrderDetails(Pageable pageable) {
         log.debug("REST request to get a page of OrderDetails");
         Page<OrderDetailsDTO> page = orderDetailsService.findAll(pageable);
@@ -157,6 +163,7 @@ public class OrderDetailsResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the orderDetailsDTO, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/order-details/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<OrderDetailsDTO> getOrderDetails(@PathVariable Long id) {
         log.debug("REST request to get OrderDetails : {}", id);
         Optional<OrderDetailsDTO> orderDetailsDTO = orderDetailsService.findOne(id);
@@ -170,6 +177,7 @@ public class OrderDetailsResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/order-details/{id}")
+    @PreAuthorize("hasAuthority(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteOrderDetails(@PathVariable Long id) {
         log.debug("REST request to delete OrderDetails : {}", id);
         orderDetailsService.delete(id);
